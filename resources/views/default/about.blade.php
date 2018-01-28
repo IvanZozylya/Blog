@@ -1,9 +1,5 @@
 @extends('default.layouts.layout')
 
-@section('header')
-
-@endsection
-
 @section('sidebar')
     <br><br><br>
     <div class="col-xs-6 col-sm-3 sidebar-offcanvas">

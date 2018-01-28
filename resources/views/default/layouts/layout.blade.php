@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title><?php echo $title;?></title>
+    <title>{{ $title }}</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -29,26 +29,26 @@
 <body>
 
 @section('navbar')
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo route('home');?>">Home</a></li>
-                <li><a href="<?php echo route('about');?>">About</a></li>
-                <li><a href="<?php echo route('news',['page'=>'pages']);?>">Contact</a></li>
-            </ul>
-        </div><!-- /.nav-collapse -->
-    </div><!-- /.container -->
-</div><!-- /.navbar -->
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">{{$title}}</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ route('home')}}">Home</a></li>
+                    <li><a href="{{ route('about')}}">About</a></li>
+                    <li><a href="{{ route('news',['page'=>'pages'])}}">Contact</a></li>
+                </ul>
+            </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+    </div><!-- /.navbar -->
 @endsection
 @yield('navbar')
 
@@ -62,10 +62,11 @@
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
             </p>
             @section('header')
-            <div class="jumbotron">
-                <h1><?php echo $title;?></h1>
-                <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-            </div>
+                <div class="jumbotron">
+                    <h1>{{ $title }}</h1>
+                    <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some
+                        responsive-range viewport sizes to see it in action.</p>
+                </div>
             @endsection
             @yield('header')
 
@@ -73,33 +74,32 @@
         </div><!--/span-->
 
         @section('sidebar')
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-            <div class="list-group">
-                <a href="#" class="list-group-item active">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-            </div>
-        </div><!--/span-->
-            @endsection
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                </div>
+            </div><!--/span-->
+        @endsection
         @yield('sidebar')
     </div><!--/row-->
 
     <hr>
     @section('footer')
-    <footer>
-        <p>&copy; Company 2017</p>
-    </footer>
+        <footer>
+            <p>&copy; Company 2017</p>
+        </footer>
     @endsection
     @yield('footer')
 </div><!--/.container-->
-
 
 
 <!-- Bootstrap core JavaScript
