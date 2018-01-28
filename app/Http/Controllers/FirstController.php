@@ -11,7 +11,14 @@ class FirstController extends Controller
     }
 
     public function show(){
-        echo "<br>".__METHOD__;
+        $data = [
+            'title' => 'About'
+        ];
+
+        if (view()->exists('default.about'))
+            return view('default.about', $data);
+
+        abort(404);
     }
 
     public function __construct()
