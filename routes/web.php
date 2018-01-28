@@ -19,8 +19,8 @@ Route::prefix('admin')->group(function (){
     Route::resource('page',"Admin\CoreResource");
 });
 
-Route::group(['middleware'=>['aoe']],function (){
-    Route::get('/users/{page}','FirstController@getIndex')->name('news');
-});
+
+Route::match(['get','post'],'/contact/{name?}','FirstController@getContact')->name('contact');
+
 
 Route::get('/about','FirstController@show')->name('about');

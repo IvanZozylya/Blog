@@ -44,7 +44,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home')}}">Home</a></li>
                     <li><a href="{{ route('about')}}">About</a></li>
-                    <li><a href="{{ route('news',['page'=>'pages'])}}">Contact</a></li>
+                    <li><a href="{{ route('contact')}}">Contact</a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
         </div><!-- /.container -->

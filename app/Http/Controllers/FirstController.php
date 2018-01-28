@@ -6,11 +6,21 @@ use Illuminate\Http\Request;
 
 class FirstController extends Controller
 {
-    public function getIndex($page){
-        echo $page;
+    public function getContact(Request $request)
+    {
+
+        $data = [
+            'title' => 'Contact'
+        ];
+
+        if (view()->exists('default.contact'))
+            return view('default.contact', $data);
+
+        abort(404);
     }
 
-    public function show(){
+    public function show()
+    {
         $data = [
             'title' => 'About'
         ];
@@ -23,6 +33,6 @@ class FirstController extends Controller
 
     public function __construct()
     {
-       // $this->middleware('aoe');
+        // $this->middleware('aoe');
     }
 }
