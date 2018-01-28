@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/','Admin\IndexController@show')->name('home');
 
 //Test
-Route::get('/users',"FirstController@show");
-Route::resource('page',"Admin\CoreResource")->only('index','show');
+
+Route::prefix('admin')->group(function (){
+    Route::resource('page',"Admin\CoreResource");
+});
+
+Route::group(['middleware'=>['aoe']],function (){
+    Route::get('/users/{page}','FirstController@getIndex')->name('news');
+});
+
+Route::get('/about','FirstController@show')->name('about');

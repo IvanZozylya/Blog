@@ -14,7 +14,7 @@ class CoreResource extends Controller
      */
     public function index()
     {
-       echo __METHOD__;
+      echo __METHOD__;
     }
 
     /**
@@ -46,7 +46,7 @@ class CoreResource extends Controller
      */
     public function show($id)
     {
-        echo $id;
+       return view('welcome');
     }
 
     /**

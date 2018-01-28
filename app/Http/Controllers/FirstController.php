@@ -6,8 +6,16 @@ use Illuminate\Http\Request;
 
 class FirstController extends Controller
 {
-    public function show()
+    public function getIndex($page){
+        echo $page;
+    }
+
+    public function show(){
+        echo "<br>".__METHOD__;
+    }
+
+    public function __construct()
     {
-        echo __METHOD__;
+       // $this->middleware('aoe');
     }
 }
