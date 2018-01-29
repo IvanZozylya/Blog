@@ -12,24 +12,22 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        //1
-        DB::insert('INSERT INTO `articles` (`name`,`text`,`img`) VALUES (?,?,?)',
-            [
-                'Blog Post',
-                '<p>Hello WOrld</p>',
-                'pic1.jpg'
-            ]);
-        //2
+        DB::insert("INSERT INTO `articles` (`name`,`text`,`img`) VALUES (?,?,?)",[
+            'DB vers1 name',
+            'DB vers1 text',
+            'DB vers1 img',
+        ]);
+
         DB::table('articles')->insert([
-            'name' => str_random(10),
-            'text' => str_random(10).'@gmail.com',
-            'img' => str_random(10),
+           'name'=>str_random(10),
+           'text'=>str_random(10),
+           'img'=>str_random(10),
         ]);
-        //3
         Article::create([
-            'name'=>'Simple POST',
-            'text'=>'Hello World!',
-            'img'=>'pic3.jpg',
+            'name'=>str_random(10).'model',
+            'text'=>str_random(10).'model',
+            'img'=>str_random(10).'model',
         ]);
+
     }
 }
