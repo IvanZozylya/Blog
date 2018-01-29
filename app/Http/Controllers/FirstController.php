@@ -13,8 +13,9 @@ class FirstController extends Controller
             'title' => 'Contact'
         ];
 
-        if (view()->exists('default.contact'))
-            return view('default.contact', $data);
+        if(view()->exists('default.contact')){
+            return view('default.contact',$data);
+        }
 
         abort(404);
     }
